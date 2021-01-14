@@ -1,0 +1,10 @@
+ObjectType = Image
+ElementType = MET_UCHAR
+NDims = 3
+
+DimSize = 512 512 512
+ElementSpacing = 1 1 1
+ElementSize = 17.472e-6 17.472e-6 17.472e-6
+Offset = 0.0 0.0 0.0
+ElementDataFile = bead_pack_512.raw
+threshold 1 1 

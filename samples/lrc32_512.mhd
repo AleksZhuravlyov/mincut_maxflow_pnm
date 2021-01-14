@@ -1,0 +1,10 @@
+ObjectType = Image
+ElementType = MET_UCHAR
+NDims = 3
+
+DimSize = 512 512 512
+ElementSpacing = 1 1 1
+ElementSize = 9.184e-6 9.184e-6 9.184e-6
+Offset = 0.0 0.0 0.0
+ElementDataFile = lrc32_512.raw
+threshold 1 1 
