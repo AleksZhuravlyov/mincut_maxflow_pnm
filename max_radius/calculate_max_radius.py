@@ -23,14 +23,14 @@
 import sys
 import os
 import numpy as np
-import matplotlib.pyplot as plt
 from scipy import ndimage
 
-from max_radius import bool_shooting_method
-from max_radius import Max_radius
+current_path = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.join(current_path, '../'))
+from max_radius.max_radius import bool_shooting_method, Max_radius
 
 
-def calculate_max_radius(segmented_im, voxel_size, input_output_im, file_name=):
+def calculate_max_radius(segmented_im, voxel_size, input_output_im, file_name):
     # calculate distance map
     distance_map_im = ndimage.distance_transform_edt(segmented_im)
     distance_map_im *= voxel_size    
@@ -44,6 +44,6 @@ def calculate_max_radius(segmented_im, voxel_size, input_output_im, file_name=):
 
     print('threshold, accuracy', result)
 
-    np.savetxt(file_name + '_max__radius.txt', [result[0]])
+    np.savetxt(file_name + '_max_radius.txt', [result[0]])
 
     return result

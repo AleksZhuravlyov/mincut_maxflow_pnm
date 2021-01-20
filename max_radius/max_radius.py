@@ -25,6 +25,9 @@ import os
 import numpy as np
 from scipy import ndimage
 
+current_path = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.join(current_path, '../'))
+
 
 def bool_shooting_method(bool_function, init_x, init_dx, min_dx):
     ind = 0
