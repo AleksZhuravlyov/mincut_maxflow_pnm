@@ -2,18 +2,18 @@ import sys
 import os
 import random
 import porespy as ps
+
 current_path = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.join(current_path, '../'))
 
 from computations.calculate_flows import calculate_flows
 
-
 # Code below allows generating artificial PN model and flows calculation
-with open('out/artificial_data.csv', 'w') as file:
+with open('../out/plotting_data_for_analysis.csvq', 'w') as file:
     file.write('porosity,' + 'k_pnm,' + 'q_pnm,' + 'k_edm,' +
                'q_edm,' + 'radius_pore_avg,' + 'radius_pore_std,' + 'radius_throat_avg,' +
                'radius_throat_std,' + 'length_throat_avg,' + 'length_throat_std,' +
-               'connection_n_avg,' + 'connection_n_std,' + '\n')
+               'connection_n_avg,' + 'connection_n_std' + '\n')
 
     im_n = 1000
     i = 0
@@ -31,7 +31,7 @@ with open('out/artificial_data.csv', 'w') as file:
                 break
             im = ps.generators.blobs(shape=dims, porosity=poro, blobiness=blob)
             net = ps.networks.snow(im, voxel_size=voxel_size)
-            Dict, min_cut = calculate_flows(net, pn_name=f'out/pn_{i}')
+            Dict, min_cut = calculate_flows(net)
             file.write(str(poro) + ',' + str(Dict['K_pnm']) +
                        ',' + str(Dict['Q_pnm']) + ',' + str(Dict['K_edm']) +
                        ',' + str(Dict['Q_edm']) + ',' + str(Dict['por_rad_avg']) +
