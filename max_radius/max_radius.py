@@ -59,7 +59,6 @@ class Max_radius:
         s.distance_map_im = distance_map_im
         s.input_im = input_im
         s.output_im = output_im
-        s.save_paraview = save_paraview
         s.voxel_size = voxel_size
 
     def is_propagated(s, threshold, ind=0):
