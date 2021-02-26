@@ -11,7 +11,7 @@ from scipy import stats
 
 
 def better_regplot(x, y, **kwargs):
-    ax = sns.regplot(x, y, **kwargs)
+    ax = sns.regplot(x=x, y=y, **kwargs)
     margin = (max(y) - min(y)) * 0.1
     plt.ylim(min(y) - margin, max(y) + margin)
     R2 = round(stats.pearsonr(x, y)[0] ** 2, 3)

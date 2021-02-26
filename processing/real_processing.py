@@ -62,10 +62,14 @@ def extract_pn(image, voxel_size, case_name):
 
 
 if __name__ == '__main__':
-    im, dims, voxel_sizes, case_name = read_raw_file('../real_samples', 'gambier_512.mhd')
-    net = extract_pn(image=im, voxel_size=voxel_sizes[0], case_name=case_name)
-    flow_params, min_cut = calculate_flows(net)
-    input_output_im = np.zeros_like(im, dtype=int)
-    input_output_im[0, :, :] = im[0, :, :]
-    input_output_im[dims[0] - 1, :, :] = im[dims[0] - 1, :, :] * 2
-    calculate_max_radius(im, voxel_sizes[0], input_output_im, case_name + '__')
+
+    cases = ['bead_pack_512', 'castle_512', 'gambier_512', 'gambier_512', 'lrc32_512']
+    for case in cases:
+        im, dims, voxel_sizes, case_name = read_raw_file('../real_samples', case + '.mhd')
+        net = extract_pn(image=im, voxel_size=voxel_sizes[0], case_name=case_name)
+        flow_params, min_cut = calculate_flows(net)
+        np.savetxt('../out/' + case_name + '_min_cut_radii.txt', min_cut['radius'])
+        input_output_im = np.zeros_like(im, dtype=int)
+        input_output_im[0, :, :] = im[0, :, :]
+        input_output_im[dims[0] - 1, :, :] = im[dims[0] - 1, :, :] * 2
+        calculate_max_radius(im, voxel_sizes[0], input_output_im, case_name)

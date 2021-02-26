@@ -9,7 +9,7 @@ sys.path.append(os.path.join(current_path, '../'))
 from computations.calculate_flows import calculate_flows
 
 # Code below allows generating artificial PN model and flows calculation
-with open('../out/plotting_data_for_analysis.csvq', 'w') as file:
+with open('../out/plotting_data_for_analysis.csv', 'w') as file:
     file.write('porosity,' + 'k_pnm,' + 'q_pnm,' + 'k_edm,' +
                'q_edm,' + 'radius_pore_avg,' + 'radius_pore_std,' + 'radius_throat_avg,' +
                'radius_throat_std,' + 'length_throat_avg,' + 'length_throat_std,' +
