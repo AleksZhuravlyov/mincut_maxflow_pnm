@@ -51,7 +51,7 @@ The developed code has the following key features:
 
 ## Publications
 
-Armstrong, R.T., Lantec, Z., Mostaghimi, P., Zhuravljov, A., Herring, A., Robins, V. (2021). Correspondence of max-flow to the absolute permeability of porous systems. Physical Review Fluids (being peer-reviewed).
+Armstrong, R.T., Lantec, Z., Mostaghimi, P., Zhuravljov, A., Herring, A., Robins, V. (2021). Correspondence of max-flow to the absolute permeability of porous systems. Physical Review Fluids (editorially approved for publication).
 
 
 ## Authors
